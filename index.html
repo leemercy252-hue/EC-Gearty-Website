@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="E. C. Gearty & Company Solicitors — Trusted legal advice in Longford for over 35 years. Property law, family law, litigation, wills & probate, and more.">
+    <meta name="keywords" content="solicitor Longford, property law Ireland, wills probate, family law, litigation, E.C. Gearty">
+    <title>E. C. Gearty & Company Solicitors | Trusted Legal Advice in Longford</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 50:'#E8EBF0', 100:'#C5CCD9', 200:'#8B9AB3', 300:'#51698D', 400:'#2A4060', 500:'#1B2A4A', 600:'#162240', 700:'#111A33', 800:'#0C1226', 900:'#070D19' },
+                        gold: { 50:'#FBF6E6', 100:'#F5EAC0', 200:'#EBD580', 300:'#E0BF40', 400:'#D4AF37', 500:'#C9A84C', 600:'#A88A3D', 700:'#876C2E', 800:'#664E20', 900:'#453012' },
+                        cream: { 50:'#FDFCFA', 100:'#FAF7F2', 200:'#F5F0E8', 300:'#EDE5D8' }
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        body: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+        ::selection { background: rgba(212,175,55,0.3); color: #1B2A4A; }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #FAF7F2; }
+        ::-webkit-scrollbar-thumb { background: #1B2A4A; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #2A4060; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 100ms; }
+        .reveal-delay-2 { transition-delay: 200ms; }
+        .reveal-delay-3 { transition-delay: 300ms; }
+        .reveal-delay-4 { transition-delay: 400ms; }
+        .reveal-delay-5 { transition-delay: 500ms; }
+
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(11,18,38,0.90) 0%, rgba(27,42,74,0.85) 50%, rgba(22,34,64,0.88) 100%);
+        }
+
+        .why-overlay {
+            background: rgba(27, 42, 74, 0.92);
+        }
+
+        .gold-line {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #D4AF37, #E0BF40);
+        }
+
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(27,42,74,0.12);
+        }
+        .service-card:hover .service-icon {
+            background: #1B2A4A;
+            color: #D4AF37;
+        }
+        .service-icon {
+            transition: all 0.4s ease;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #D4AF37;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+        }
+        .faq-answer.open {
+            max-height: 300px;
+        }
+        .faq-chevron {
+            transition: transform 0.3s ease;
+        }
+        .faq-chevron.rotated {
+            transform: rotate(180deg);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #D4AF37, #C9A84C);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #E0BF40, #D4AF37);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(212,175,55,0.35);
+        }
+
+        .btn-secondary {
+            border: 2px solid rgba(255,255,255,0.6);
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: #D4AF37;
+            color: #D4AF37;
+        }
+
+        .cookie-banner {
+            transform: translateY(100%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+
+        .toast {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .stat-number {
+            background: linear-gradient(135deg, #D4AF37, #E0BF40);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #D4AF37;
+            box-shadow: 0 0 0 3px rgba(212,175,55,0.15);
+        }
+    </style>
+</head>
+<body class="bg-cream-100 text-navy-500">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex items-center justify-between h-20">
+                <a href="#hero" class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded bg-gold-400 flex items-center justify-center">
+                        <iconify-icon icon="lucide:scale" class="text-navy-800 text-xl"></iconify-icon>
+                    </div>
+                    <div class="leading-tight">
+                        <span class="font-display font-bold text-lg block">E. C. Gearty</span>
+                        <span class="text-xs tracking-widest uppercase opacity-70">& Company</span>
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="#about" class="nav-link text-sm font-medium tracking-wide">About</a>
+                    <a href="#services" class="nav-link text-sm font-medium tracking-wide">Services</a>
+                    <a href="#team" class="nav-link text-sm font-medium tracking-wide">Team</a>
+                    <a href="#testimonials" class="nav-link text-sm font-medium tracking-wide">Testimonials</a>
+                    <a href="#faq" class="nav-link text-sm font-medium tracking-wide">FAQ</a>
+                    <a href="#contact" class="nav-link text-sm font-medium tracking-wide">Contact</a>
+                </div>
+
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:+353433346312" class="flex items-center gap-2 text-sm font-medium text-gold-400 hover:text-gold-300 transition-colors">
+                        <iconify-icon icon="lucide:phone" class="text-base"></iconify-icon>
+                        +353 43 334 6312
+                    </a>
+                    <a href="#contact" class="btn-primary text-navy-900 text-sm font-semibold px-6 py-2.5 rounded-md">
+                        Book Consultation
+                    </a>
+                </div>
+
+                <button id="mobileToggle" class="lg:hidden p-2" aria-label="Open menu">
+                    <iconify-icon icon="lucide:menu" class="text-2xl"></iconify-icon>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-navy-500">
+        <div class="flex items-center justify-between p-6">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded bg-gold-400 flex items-center justify-center">
+                    <iconify-icon icon="lucide:scale" class="text-navy-800 text-xl"></iconify-icon>
+                </div>
+                <span class="font-display font-bold text-white text-lg">E. C. Gearty</span>
+            </div>
+            <button id="mobileClose" class="p-2 text-white" aria-label="Close menu">
+                <iconify-icon icon="lucide:x" class="text-2xl"></iconify-icon>
+            </button>
+        </div>
+        <div class="flex flex-col items-center gap-8 pt-12">
+            <a href="#about" class="mobile-link text-white text-xl font-display">About</a>
+            <a href="#services" class="mobile-link text-white text-xl font-display">Services</a>
+            <a href="#team" class="mobile-link text-white text-xl font-display">Team</a>
+            <a href="#testimonials" class="mobile-link text-white text-xl font-display">Testimonials</a>
+            <a href="#faq" class="mobile-link text-white text-xl font-display">FAQ</a>
+            <a href="#contact" class="mobile-link text-white text-xl font-display">Contact</a>
+            <div class="mt-8 flex flex-col items-center gap-4">
+                <a href="tel:+353433346312" class="flex items-center gap-2 text-gold-400 text-lg font-medium">
+                    <iconify-icon icon="lucide:phone"></iconify-icon>
+                    +353 43 334 6312
+                </a>
+                <a href="#contact" class="mobile-link btn-primary text-navy-900 font-semibold px-8 py-3 rounded-md text-lg">
+                    Book Consultation
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://z-cdn-media.chatglm.cn/files/df320de7-7b82-41b2-89bf-98d04f453ba9.jpg?auth_key=1881538719-6bb591f219fe476fb7529d114a6c8b82-0-579c52212482c502337efa51695cfdbc');"></div>
+        <!-- Dark Overlay for Text Readability -->
+        <div class="hero-overlay absolute inset-0"></div>
+
+        <div class="absolute top-20 left-10 w-64 h-64 border border-gold-400/10 rounded-full animate-pulse"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 border border-gold-400/5 rounded-full"></div>
+
+        <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+            <div class="reveal">
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-5 py-2 mb-8">
+                    <div class="w-2 h-2 bg-gold-400 rounded-full animate-pulse"></div>
+                    <span class="text-gold-200 text-xs tracking-widest uppercase font-medium">Est. Late 1980s — Longford, Ireland</span>
+                </div>
+            </div>
+
+            <h1 class="reveal reveal-delay-1 font-display text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6">
+                Trusted Legal Advice<br>
+                <span class="text-gold-400">in Longford</span> for Over<br>
+                35 Years
+            </h1>
+
+            <p class="reveal reveal-delay-2 text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                Providing expert legal services for individuals, families, businesses, and public bodies throughout Longford and beyond.
+            </p>
+
+            <div class="reveal reveal-delay-3 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#contact" class="btn-primary text-navy-900 font-semibold px-8 py-4 rounded-md text-sm tracking-wide flex items-center gap-2">
+                    Book a Consultation
+                    <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+                </a>
+                <a href="tel:+353433346312" class="btn-secondary text-white font-medium px-8 py-4 rounded-md text-sm tracking-wide flex items-center gap-2">
+                    <iconify-icon icon="lucide:phone"></iconify-icon>
+                    Call Now
+                </a>
+            </div>
+
+            <div class="reveal reveal-delay-4 grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-10 border-t border-white/10">
+                <div>
+                    <div class="stat-number font-display text-3xl md:text-4xl font-bold">35+</div>
+                    <div class="text-white/50 text-sm mt-1">Years Experience</div>
+                </div>
+                <div>
+                    <div class="stat-number font-display text-3xl md:text-4xl font-bold">5</div>
+                    <div class="text-white/50 text-sm mt-1">Legal Experts</div>
+                </div>
+                <div>
+                    <div class="stat-number font-display text-3xl md:text-4xl font-bold">1000+</div>
+                    <div class="text-white/50 text-sm mt-1">Clients Served</div>
+                </div>
+                <div>
+                    <div class="stat-number font-display text-3xl md:text-4xl font-bold">7</div>
+                    <div class="text-white/50 text-sm mt-1">Practice Areas</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <iconify-icon icon="lucide:chevron-down" class="text-white/40 text-2xl"></iconify-icon>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://z-cdn-media.chatglm.cn/files/093742a9-a55e-4038-83ba-35255a94a254.jpg?auth_key=1881532959-f8528c6fb69f46f59c0bef77a2ce5fe3-0-13385a5ddd6e563ebc020bb6ecd54103" alt="E. C. Gearty & Company Solicitors office exterior at 5 Church Street, Longford" class="w-full h-[500px] lg:h-[600px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-500/40 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 bg-navy-500/80 backdrop-blur-md text-white text-xs tracking-wide font-medium px-4 py-2 rounded-lg flex items-center gap-2">
+                            <iconify-icon icon="lucide:map-pin" class="text-gold-400"></iconify-icon>
+                            5 Church Street, Longford
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 lg:right-8 bg-navy-500 text-white p-6 rounded-xl shadow-2xl">
+                        <div class="stat-number font-display text-4xl font-bold">35+</div>
+                        <div class="text-white/60 text-sm">Years of<br>Excellence</div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="reveal">
+                        <span class="text-gold-400 text-xs tracking-widest uppercase font-semibold">About Our Firm</span>
+                        <div class="gold-line mt-3 mb-6"></div>
+                    </div>
+
+                    <h2 class="reveal reveal-delay-1 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-navy-500 leading-[1.15] mb-6">
+                        A Legacy of Trust &<br>
+                        <span class="text-gold-400">Legal Excellence</span>
+                    </h2>
+
+                    <p class="reveal reveal-delay-2 text-navy-300 text-lg leading-relaxed mb-6">
+                        E. C. Gearty & Company Solicitors has served County Longford and surrounding areas since the late 1980s. Founded by Enda Gearty and now led by Managing Partner Frank Gearty, the firm has built a reputation for professional legal representation, practical advice, and strong community connections.
+                    </p>
+
+                    <p class="reveal reveal-delay-3 text-navy-300 leading-relaxed mb-8">
+                        The firm combines decades of legal experience with modern legal expertise across property law, litigation, family law, wills and probate, local authority law, and public administration matters.
+                    </p>
+
+                    <div class="reveal reveal-delay-4 grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-gold-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:check" class="text-gold-400 text-sm"></iconify-icon>
+                            </div>
+                            <span class="text-navy-400 text-sm font-medium">Established in the 1980s</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-gold-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:check" class="text-gold-400 text-sm"></iconify-icon>
+                            </div>
+                            <span class="text-navy-400 text-sm font-medium">Experienced Legal Team</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-gold-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:check" class="text-gold-400 text-sm"></iconify-icon>
+                            </div>
+                            <span class="text-navy-400 text-sm font-medium">Local Knowledge & Connections</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-gold-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:check" class="text-gold-400 text-sm"></iconify-icon>
+                            </div>
+                            <span class="text-navy-400 text-sm font-medium">Court Representation Experts</span>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="reveal reveal-delay-5 btn-primary inline-flex items-center gap-2 text-navy-900 font-semibold px-8 py-4 rounded-md text-sm tracking-wide">
+                        Get In Touch
+                        <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 lg:py-32 bg-cream-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="reveal text-gold-400 text-xs tracking-widest uppercase font-semibold">Our Services</span>
+                <div class="reveal gold-line mx-auto mt-3 mb-6"></div>
+                <h2 class="reveal reveal-delay-1 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-navy-500 leading-[1.15] mb-4">
+                    Expert Legal Solutions
+                </h2>
+                <p class="reveal reveal-delay-2 text-navy-300 text-lg">
+                    Comprehensive legal services tailored to your needs, delivered with expertise and care.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="reveal service-card bg-white rounded-xl p-8 border border-cream-300/50 cursor-pointer" onclick="toggleServiceDetail(this)">
+                    <div class="service-icon w-14 h-14 bg-cream-200 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:home" class="text-2xl text-navy-500"></iconify-icon>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold text-navy-500 mb-3">Conveyancing & Property Law</h3>
+                    <p class="text-navy-300 text-sm leading-relaxed mb-4">Expert guidance through all property transactions with attention to detail and efficiency.</p>
+                    <div class="service-detail hidden">
+                        <ul class="space-y-2 pt-4 border-t border-cream-300">
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Residential property purchases</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Property sales</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Agricultural land transactions</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Commercial property</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Remortgaging</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Property transfers</li>
+                        </ul>
+                    </div>
+                    <span class="text-gold-400 text-xs font-medium tracking-wide mt-4 inline-flex items-center gap-1">
+                        Click for details <iconify-icon icon="lucide:chevron-down" class="text-xs service-chevron transition-transform"></iconify-icon>
+                    </span>
+                </div>
+
+                <div class="reveal reveal-delay-1 service-card bg-white rounded-xl p-8 border border-cream-300/50 cursor-pointer" onclick="toggleServiceDetail(this)">
+                    <div class="service-icon w-14 h-14 bg-cream-200 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:file-text" class="text-2xl text-navy-500"></iconify-icon>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold text-navy-500 mb-3">Wills & Probate</h3>
+                    <p class="text-navy-300 text-sm leading-relaxed mb-4">Protecting your legacy and ensuring your wishes are honoured with sensitivity and precision.</p>
+                    <div class="service-detail hidden">
+                        <ul class="space-y-2 pt-4 border-t border-cream-300">
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Will drafting</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Estate administration</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Probate applications</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Succession planning</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Inheritance matters</li>
+                        </ul>
+                    </div>
+                    <span class="text-gold-400 text-xs font-medium tracking-wide mt-4 inline-flex items-center gap-1">
+                        Click for details <iconify-icon icon="lucide:chevron-down" class="text-xs service-chevron transition-transform"></iconify-icon>
+                    </span>
+                </div>
+
+                <div class="reveal reveal-delay-2 service-card bg-white rounded-xl p-8 border border-cream-300/50 cursor-pointer" onclick="toggleServiceDetail(this)">
+                    <div class="service-icon w-14 h-14 bg-cream-200 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:users" class="text-2xl text-navy-500"></iconify-icon>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold text-navy-500 mb-3">Family Law</h3>
+                    <p class="text-navy-300 text-sm leading-relaxed mb-4">Compassionate support through difficult family matters with discretion and expertise.</p>
+                    <div class="service-detail hidden">
+                        <ul class="space-y-2 pt-4 border-t border-cream-300">
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Divorce</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Separation agreements</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Family disputes</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Child-related matters</li>
+                        </ul>
+                    </div>
+                    <span class="text-gold-400 text-xs font-medium tracking-wide mt-4 inline-flex items-center gap-1">
+                        Click for details <iconify-icon icon="lucide:chevron-down" class="text-xs service-chevron transition-transform"></iconify-icon>
+                    </span>
+                </div>
+
+                <div class="reveal service-card bg-white rounded-xl p-8 border border-cream-300/50 cursor-pointer" onclick="toggleServiceDetail(this)">
+                    <div class="service-icon w-14 h-14 bg-cream-200 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:gavel" class="text-2xl text-navy-500"></iconify-icon>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold text-navy-500 mb-3">Litigation & Court Representation</h3>
+                    <p class="text-navy-300 text-sm leading-relaxed mb-4">Strong courtroom advocacy and strategic litigation to protect your interests.</p>
+                    <div class="service-detail hidden">
+                        <ul class="space-y-2 pt-4 border-t border-cream-300">
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Civil litigation</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>District Court representation</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Circuit Court representation</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Debt recovery</li>
+                        </ul>
+                    </div>
+                    <span class="text-gold-400 text-xs font-medium tracking-wide mt-4 inline-flex items-center gap-1">
+                        Click for details <iconify-icon icon="lucide:chevron-down" class="text-xs service-chevron transition-transform"></iconify-icon>
+                    </span>
+                </div>
+
+                <div class="reveal reveal-delay-1 service-card bg-white rounded-xl p-8 border border-cream-300/50 cursor-pointer" onclick="toggleServiceDetail(this)">
+                    <div class="service-icon w-14 h-14 bg-cream-200 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:shield" class="text-2xl text-navy-500"></iconify-icon>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold text-navy-500 mb-3">Personal Injury Claims</h3>
+                    <p class="text-navy-300 text-sm leading-relaxed mb-4">Dedicated representation to secure fair compensation for your injuries.</p>
+                    <div class="service-detail hidden">
+                        <ul class="space-y-2 pt-4 border-t border-cream-300">
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Accident claims</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Workplace injuries</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Compensation cases</li>
+                        </ul>
+                    </div>
+                    <span class="text-gold-400 text-xs font-medium tracking-wide mt-4 inline-flex items-center gap-1">
+                        Click for details <iconify-icon icon="lucide:chevron-down" class="text-xs service-chevron transition-transform"></iconify-icon>
+                    </span>
+                </div>
+
+                <div class="reveal reveal-delay-2 service-card bg-white rounded-xl p-8 border border-cream-300/50 cursor-pointer" onclick="toggleServiceDetail(this)">
+                    <div class="service-icon w-14 h-14 bg-cream-200 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:landmark" class="text-2xl text-navy-500"></iconify-icon>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold text-navy-500 mb-3">Public & Local Authority Law</h3>
+                    <p class="text-navy-300 text-sm leading-relaxed mb-4">Specialised legal services for public bodies, planning matters, and judicial reviews.</p>
+                    <div class="service-detail hidden">
+                        <ul class="space-y-2 pt-4 border-t border-cream-300">
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Judicial reviews</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Planning matters</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Environmental enforcement</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Local authority legal services</li>
+                        </ul>
+                    </div>
+                    <span class="text-gold-400 text-xs font-medium tracking-wide mt-4 inline-flex items-center gap-1">
+                        Click for details <iconify-icon icon="lucide:chevron-down" class="text-xs service-chevron transition-transform"></iconify-icon>
+                    </span>
+                </div>
+
+                <div class="reveal service-card bg-white rounded-xl p-8 border border-cream-300/50 cursor-pointer md:col-start-1 lg:col-start-1" onclick="toggleServiceDetail(this)">
+                    <div class="service-icon w-14 h-14 bg-cream-200 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:lock" class="text-2xl text-navy-500"></iconify-icon>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold text-navy-500 mb-3">Criminal Law</h3>
+                    <p class="text-navy-300 text-sm leading-relaxed mb-4">Vigorous defence and representation at every stage of criminal proceedings.</p>
+                    <div class="service-detail hidden">
+                        <ul class="space-y-2 pt-4 border-t border-cream-300">
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Criminal defence</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Garda station representation</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Court appearances</li>
+                        </ul>
+                    </div>
+                    <span class="text-gold-400 text-xs font-medium tracking-wide mt-4 inline-flex items-center gap-1">
+                        Click for details <iconify-icon icon="lucide:chevron-down" class="text-xs service-chevron transition-transform"></iconify-icon>
+                    </span>
+                </div>
+
+                <div class="reveal reveal-delay-1 service-card bg-white rounded-xl p-8 border border-cream-300/50 cursor-pointer" onclick="toggleServiceDetail(this)">
+                    <div class="service-icon w-14 h-14 bg-cream-200 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:file-check" class="text-2xl text-navy-500"></iconify-icon>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold text-navy-500 mb-3">Powers of Attorney</h3>
+                    <p class="text-navy-300 text-sm leading-relaxed mb-4">Planning for the future with legally robust power of attorney arrangements.</p>
+                    <div class="service-detail hidden">
+                        <ul class="space-y-2 pt-4 border-t border-cream-300">
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Enduring Powers of Attorney</li>
+                            <li class="text-navy-300 text-sm flex items-center gap-2"><iconify-icon icon="lucide:chevron-right" class="text-gold-400 text-xs"></iconify-icon>Future planning services</li>
+                        </ul>
+                    </div>
+                    <span class="text-gold-400 text-xs font-medium tracking-wide mt-4 inline-flex items-center gap-1">
+                        Click for details <iconify-icon icon="lucide:chevron-down" class="text-xs service-chevron transition-transform"></iconify-icon>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section (With Background Image) -->
+    <section class="py-24 lg:py-32 relative overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://z-cdn-media.chatglm.cn/files/df320de7-7b82-41b2-89bf-98d04f453ba9.jpg?auth_key=1881538719-6bb591f219fe476fb7529d114a6c8b82-0-579c52212482c502337efa51695cfdbc');"></div>
+        <!-- Dark Overlay for Text Readability -->
+        <div class="why-overlay absolute inset-0"></div>
+
+        <div class="absolute top-10 right-10 w-72 h-72 border border-gold-400/10 rounded-full"></div>
+        <div class="absolute bottom-10 left-10 w-48 h-48 border border-gold-400/5 rounded-full"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="reveal text-gold-400 text-xs tracking-widest uppercase font-semibold">Why Choose Us</span>
+                <div class="reveal gold-line mx-auto mt-3 mb-6"></div>
+                <h2 class="reveal reveal-delay-1 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] mb-4">
+                    Your Trusted Legal Partner
+                </h2>
+                <p class="reveal reveal-delay-2 text-white/60 text-lg">
+                    Decades of experience, deep local knowledge, and an unwavering commitment to our clients.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="reveal text-center p-8">
+                    <div class="w-16 h-16 bg-gold-400/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                        <iconify-icon icon="lucide:clock" class="text-gold-400 text-2xl"></iconify-icon>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold text-white mb-2">Serving Longford Since the 1980s</h3>
+                    <p class="text-white/50 text-sm leading-relaxed">Over three decades of trusted legal service to the Longford community.</p>
+                </div>
+                <div class="reveal reveal-delay-1 text-center p-8">
+                    <div class="w-16 h-16 bg-gold-400/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                        <iconify-icon icon="lucide:award" class="text-gold-400 text-2xl"></iconify-icon>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold text-white mb-2">Experienced Legal Team</h3>
+                    <p class="text-white/50 text-sm leading-relaxed">Five dedicated legal professionals with deep expertise across multiple practice areas.</p>
+                </div>
+                <div class="reveal reveal-delay-2 text-center p-8">
+                    <div class="w-16 h-16 bg-gold-400/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                        <iconify-icon icon="lucide:map-pin" class="text-gold-400 text-2xl"></iconify-icon>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold text-white mb-2">Local Knowledge & Connections</h3>
+                    <p class="text-white/50 text-sm leading-relaxed">Deep understanding of the local landscape, courts, and community.</p>
+                </div>
+                <div class="reveal text-center p-8">
+                    <div class="w-16 h-16 bg-gold-400/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                        <iconify-icon icon="lucide:gavel" class="text-gold-400 text-2xl"></iconify-icon>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold text-white mb-2">Court Representation Expertise</h3>
+                    <p class="text-white/50 text-sm leading-relaxed">Skilled advocates in District Court, Circuit Court, and beyond.</p>
+                </div>
+                <div class="reveal reveal-delay-1 text-center p-8">
+                    <div class="w-16 h-16 bg-gold-400/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                        <iconify-icon icon="lucide:home" class="text-gold-400 text-2xl"></iconify-icon>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold text-white mb-2">Property & Probate Specialists</h3>
+                    <p class="text-white/50 text-sm leading-relaxed">Specialist knowledge in conveyancing, wills, and estate administration.</p>
+                </div>
+                <div class="reveal reveal-delay-2 text-center p-8">
+                    <div class="w-16 h-16 bg-gold-400/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                        <iconify-icon icon="lucide:heart-handshake" class="text-gold-400 text-2xl"></iconify-icon>
+                    </div>
+                    <h3 class="font-display text-lg font-semibold text-white mb-2">Trusted by All Sectors</h3>
+                    <p class="text-white/50 text-sm leading-relaxed">Individuals, families, businesses, and public bodies rely on our counsel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-24 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="reveal text-gold-400 text-xs tracking-widest uppercase font-semibold">Our Team</span>
+                <div class="reveal gold-line mx-auto mt-3 mb-6"></div>
+                <h2 class="reveal reveal-delay-1 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-navy-500 leading-[1.15] mb-4">
+                    Meet Our Legal Experts
+                </h2>
+                <p class="reveal reveal-delay-2 text-navy-300 text-lg">
+                    A dedicated team of professionals committed to achieving the best outcomes for you.
+                </p>
+            </div>
+
+            <div class="reveal relative rounded-2xl overflow-hidden shadow-2xl mb-16 max-w-4xl mx-auto">
+                <img src="https://z-cdn-media.chatglm.cn/files/e9c7fe97-5879-4634-8063-7f0f9cbde582.jpg?auth_key=1881538274-19897aa3cf9a4a14a767e69c8b211dfe-0-ab034c9b4948118ff0e33400c059cc1b" alt="The E. C. Gearty & Company legal team" class="w-full h-[300px] md:h-[420px] lg:h-[500px] object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-500/20 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10 max-w-5xl mx-auto">
+                <div class="reveal border-t-2 border-cream-300 pt-6">
+                    <h3 class="font-display text-xl font-semibold text-navy-500">Frank Gearty</h3>
+                    <span class="text-gold-400 text-sm font-medium tracking-wide">Managing Partner</span>
+                    <p class="text-navy-300 text-sm leading-relaxed mt-3">Qualified solicitor with decades of experience. Prominent District and Circuit Court practitioner with extensive expertise in public and administrative law.</p>
+                </div>
+                <div class="reveal reveal-delay-1 border-t-2 border-cream-300 pt-6">
+                    <h3 class="font-display text-xl font-semibold text-navy-500">Sandra Carroll</h3>
+                    <span class="text-gold-400 text-sm font-medium tracking-wide">Partner</span>
+                    <p class="text-navy-300 text-sm leading-relaxed mt-3">Specialises in local authority law, judicial reviews, injunctions, commercial conveyancing, family law, personal injury, and criminal law.</p>
+                </div>
+                <div class="reveal reveal-delay-2 border-t-2 border-cream-300 pt-6">
+                    <h3 class="font-display text-xl font-semibold text-navy-500">Lorcan Gearty</h3>
+                    <span class="text-gold-400 text-sm font-medium tracking-wide">Partner</span>
+                    <p class="text-navy-300 text-sm leading-relaxed mt-3">Focuses on wills, probate, conveyancing, civil litigation, and debt recovery.</p>
+                </div>
+                <div class="reveal reveal-delay-3 border-t-2 border-cream-300 pt-6">
+                    <h3 class="font-display text-xl font-semibold text-navy-500">Lisa Duffy</h3>
+                    <span class="text-gold-400 text-sm font-medium tracking-wide">Partner</span>
+                    <p class="text-navy-300 text-sm leading-relaxed mt-3">Experienced in estate planning, probate, property transactions, divorce, and separation matters.</p>
+                </div>
+                <div class="reveal reveal-delay-4 border-t-2 border-cream-300 pt-6 lg:col-start-2">
+                    <h3 class="font-display text-xl font-semibold text-navy-500">Michelle Reynolds</h3>
+                    <span class="text-gold-400 text-sm font-medium tracking-wide">Solicitor</span>
+                    <p class="text-navy-300 text-sm leading-relaxed mt-3">Works in criminal law, wills, probate, conveyancing, and Garda station representation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 lg:py-32 bg-cream-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="reveal text-gold-400 text-xs tracking-widest uppercase font-semibold">Testimonials</span>
+                <div class="reveal gold-line mx-auto mt-3 mb-6"></div>
+                <h2 class="reveal reveal-delay-1 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-navy-500 leading-[1.15] mb-4">
+                    What Our Clients Say
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="reveal bg-white rounded-xl p-8 border border-cream-300/50 relative">
+                    <iconify-icon icon="lucide:quote" class="text-gold-400/20 text-5xl absolute top-6 right-6"></iconify-icon>
+                    <div class="flex items-center gap-1 mb-4">
+                        <iconify-icon icon="lucide:star" class="text-gold-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-gold-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-gold-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-gold-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-gold-400"></iconify-icon>
+                    </div>
+                    <p class="text-navy-300 text-sm leading-relaxed mb-6">"Frank and his team handled the purchase of our first home with incredible professionalism. They explained every step clearly and made the whole process stress-free. I couldn't recommend them highly enough."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-navy-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">SM</div>
+                        <div>
+                            <div class="font-semibold text-navy-500 text-sm">Sarah M.</div>
+                            <div class="text-navy-300 text-xs">Property Purchase Client</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal reveal-delay-1 bg-white rounded-xl p-8 border border-cream-300/50 relative">
+                    <iconify-icon icon="lucide:quote" class="text-gold-400/20 text-5xl absolute top-6 right-6"></iconify-icon>
+                    <div class="flex items-center gap-1 mb-4">
+                        <iconify-icon icon="lucide:star" class="text-gold-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-gold-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-gold-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-gold-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-gold-400"></iconify-icon>
+                    </div>
+                    <p class="text-navy-300 text-sm leading-relaxed mb-6">"During a very difficult family matter, Lisa Duffy was compassionate, thorough, and always available to answer my questions. The outcome was far better than I expected. Truly grateful for the support."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-navy-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">PJ</div>
+                        <div>
+                            <div class="font-semibold text-navy-500 text-sm">Patrick J.</div>
+                            <div class="text-navy-300 text-xs">Family Law Client</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal reveal-delay-2 bg-white rounded-xl p-8 border border-cream-300/50 relative">
+                    <iconify-icon icon="lucide:quote" class="text-gold-400/20 text-5xl absolute top-6 right-6"></iconify-icon>
+                    <div class="flex items-center gap-1 mb-4">
+                        <iconify-icon icon="lucide:star" class="text-gold-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-gold-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-gold-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-gold-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-gold-400"></iconify-icon>
+                    </div>
+                    <p class="text-navy-300 text-sm leading-relaxed mb-6">"We've used E. C. Gearty for probate, wills, and property matters over many years. Their knowledge and efficiency are second to none. It's reassuring to have such a dependable firm in Longford."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-navy-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">MK</div>
+                        <div>
+                            <div class="font-semibold text-navy-500 text-sm">Mary K.</div>
+                            <div class="text-navy-300 text-xs">Probate & Wills Client</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 lg:py-32 bg-white">
+        <div class="max-w-3xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <span class="reveal text-gold-400 text-xs tracking-widest uppercase font-semibold">FAQ</span>
+                <div class="reveal gold-line mx-auto mt-3 mb-6"></div>
+                <h2 class="reveal reveal-delay-1 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-navy-500 leading-[1.15] mb-4">
+                    Frequently Asked Questions
+                </h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="reveal faq-item bg-cream-100 rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-display font-semibold text-navy-500 pr-4">How much does a consultation cost?</span>
+                        <iconify-icon icon="lucide:chevron-down" class="faq-chevron text-gold-400 text-xl flex-shrink-0"></iconify-icon>
+                    </button>
+                    <div class="faq-answer px-6">
+                        <p class="text-navy-300 text-sm leading-relaxed pb-6">We offer an initial consultation to discuss your matter. The cost depends on the nature and complexity of your case. Please contact our office and we'll be happy to provide transparent pricing information before you commit. We believe in clear, upfront communication about fees.</p>
+                    </div>
+                </div>
+
+                <div class="reveal reveal-delay-1 faq-item bg-cream-100 rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-display font-semibold text-navy-500 pr-4">Do I need a solicitor when buying property?</span>
+                        <iconify-icon icon="lucide:chevron-down" class="faq-chevron text-gold-400 text-xl flex-shrink-0"></iconify-icon>
+                    </button>
+                    <div class="faq-answer px-6">
+                        <p class="text-navy-300 text-sm leading-relaxed pb-6">Yes, in Ireland it is standard practice — and often required by your mortgage lender — to have a solicitor handle the legal aspects of a property purchase. Your solicitor will conduct title searches, draft and review contracts, manage the transfer of funds, and ensure the property is properly registered in your name.</p>
+                    </div>
+                </div>
+
+                <div class="reveal reveal-delay-2 faq-item bg-cream-100 rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-display font-semibold text-navy-500 pr-4">How long does probate take?</span>
+                        <iconify-icon icon="lucide:chevron-down" class="faq-chevron text-gold-400 text-xl flex-shrink-0"></iconify-icon>
+                    </button>
+                    <div class="faq-answer px-6">
+                        <p class="text-navy-300 text-sm leading-relaxed pb-6">Probate timelines vary depending on the complexity of the estate. A straightforward probate application typically takes 6–12 months. More complex estates with multiple properties, business interests, or contested wills can take longer. We work efficiently to minimise delays and keep you informed throughout.</p>
+                    </div>
+                </div>
+
+                <div class="reveal reveal-delay-3 faq-item bg-cream-100 rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-display font-semibold text-navy-500 pr-4">What should I bring to my first appointment?</span>
+                        <iconify-icon icon="lucide:chevron-down" class="faq-chevron text-gold-400 text-xl flex-shrink-0"></iconify-icon>
+                    </button>
+                    <div class="faq-answer px-6">
+                        <p class="text-navy-300 text-sm leading-relaxed pb-6">Please bring a valid form of photo identification (passport or driving licence) and proof of address (utility bill or bank statement dated within the last 3 months). Depending on your matter, also bring any relevant documents such as contracts, correspondence, court documents, or medical reports. If unsure, call us beforehand and we'll advise you.</p>
+                    </div>
+                </div>
+
+                <div class="reveal reveal-delay-4 faq-item bg-cream-100 rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-display font-semibold text-navy-500 pr-4">Can you represent me in court?</span>
+                        <iconify-icon icon="lucide:chevron-down" class="faq-chevron text-gold-400 text-xl flex-shrink-0"></iconify-icon>
+                    </button>
+                    <div class="faq-answer px-6">
+                        <p class="text-navy-300 text-sm leading-relaxed pb-6">Absolutely. Our solicitors regularly appear in the District Court, Circuit Court, and Higher Courts. Frank Gearty is a prominent court practitioner with extensive experience across criminal, civil, and family law matters. We provide strong, experienced representation at every court level.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-navy-500 relative overflow-hidden">
+        <div class="absolute top-10 right-10 w-64 h-64 border border-gold-400/5 rounded-full"></div>
+        <div class="absolute bottom-10 left-10 w-48 h-48 border border-gold-400/5 rounded-full"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <h2 class="reveal font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">Need Legal Advice?</h2>
+            <p class="reveal reveal-delay-1 text-white/60 text-lg mb-8 max-w-xl mx-auto">Contact our experienced team today for a confidential consultation. We're here to help.</p>
+            <div class="reveal reveal-delay-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#contact" class="btn-primary text-navy-900 font-semibold px-10 py-4 rounded-md text-sm tracking-wide flex items-center gap-2">
+                    Book a Consultation
+                    <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+                </a>
+                <a href="tel:+353433346312" class="flex items-center gap-2 text-gold-400 font-medium hover:text-gold-300 transition-colors">
+                    <iconify-icon icon="lucide:phone" class="text-lg"></iconify-icon>
+                    +353 43 334 6312
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 lg:py-32 bg-cream-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="reveal text-gold-400 text-xs tracking-widest uppercase font-semibold">Contact Us</span>
+                <div class="reveal gold-line mx-auto mt-3 mb-6"></div>
+                <h2 class="reveal reveal-delay-1 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-navy-500 leading-[1.15] mb-4">
+                    Get In Touch
+                </h2>
+                <p class="reveal reveal-delay-2 text-navy-300 text-lg">
+                    We're here to help. Reach out for a confidential consultation.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="reveal bg-white rounded-2xl p-8 lg:p-10 shadow-lg border border-cream-300/50">
+                    <h3 class="font-display text-2xl font-semibold text-navy-500 mb-6">Send Us a Message</h3>
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)" novalidate>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="text-navy-400 text-sm font-medium mb-1.5 block">First Name *</label>
+                                <input type="text" name="firstName" required class="w-full px-4 py-3 rounded-lg border border-cream-300 bg-cream-50 text-navy-500 text-sm transition-all" placeholder="Your first name">
+                                <span class="error-msg text-red-500 text-xs mt-1 hidden">Please enter your first name</span>
+                            </div>
+                            <div>
+                                <label class="text-navy-400 text-sm font-medium mb-1.5 block">Last Name *</label>
+                                <input type="text" name="lastName" required class="w-full px-4 py-3 rounded-lg border border-cream-300 bg-cream-50 text-navy-500 text-sm transition-all" placeholder="Your last name">
+                                <span class="error-msg text-red-500 text-xs mt-1 hidden">Please enter your last name</span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="text-navy-400 text-sm font-medium mb-1.5 block">Email Address *</label>
+                            <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-cream-300 bg-cream-50 text-navy-500 text-sm transition-all" placeholder="your@email.com">
+                            <span class="error-msg text-red-500 text-xs mt-1 hidden">Please enter a valid email address</span>
+                        </div>
+                        <div class="mb-4">
+                            <label class="text-navy-400 text-sm font-medium mb-1.5 block">Phone Number</label>
+                            <input type="tel" name="phone" class="w-full px-4 py-3 rounded-lg border border-cream-300 bg-cream-50 text-navy-500 text-sm transition-all" placeholder="+353 ...">
+                        </div>
+                        <div class="mb-4">
+                            <label class="text-navy-400 text-sm font-medium mb-1.5 block">Area of Law *</label>
+                            <select name="service" required class="w-full px-4 py-3 rounded-lg border border-cream-300 bg-cream-50 text-navy-500 text-sm transition-all">
+                                <option value="">Select an area...</option>
+                                <option value="conveyancing">Conveyancing & Property Law</option>
+                                <option value="wills">Wills & Probate</option>
+                                <option value="family">Family Law</option>
+                                <option value="litigation">Litigation & Court Representation</option>
+                                <option value="personal-injury">Personal Injury Claims</option>
+                                <option value="public-law">Public & Local Authority Law</option>
+                                <option value="criminal">Criminal Law</option>
+                                <option value="power-of-attorney">Powers of Attorney</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="error-msg text-red-500 text-xs mt-1 hidden">Please select an area of law</span>
+                        </div>
+                        <div class="mb-6">
+                            <label class="text-navy-400 text-sm font-medium mb-1.5 block">Your Message *</label>
+                            <textarea name="message" required rows="4" class="w-full px-4 py-3 rounded-lg border border-cream-300 bg-cream-50 text-navy-500 text-sm transition-all resize-none" placeholder="Briefly describe your legal matter..."></textarea>
+                            <span class="error-msg text-red-500 text-xs mt-1 hidden">Please enter your message</span>
+                        </div>
+                        <div class="mb-6">
+                            <label class="flex items-start gap-3 cursor-pointer">
+                                <input type="checkbox" name="consent" required class="mt-1 w-4 h-4 rounded border-cream-300 text-gold-400 focus:ring-gold-400">
+                                <span class="text-navy-300 text-xs leading-relaxed">I consent to E. C. Gearty & Company storing my personal data in accordance with GDPR regulations. *</span>
+                            </label>
+                            <span class="error-msg text-red-500 text-xs mt-1 hidden">You must consent to proceed</span>
+                        </div>
+                        <button type="submit" class="btn-primary w-full text-navy-900 font-semibold px-8 py-4 rounded-md text-sm tracking-wide flex items-center justify-center gap-2">
+                            <iconify-icon icon="lucide:send" class="text-base"></iconify-icon>
+                            Send Enquiry
+                        </button>
+                    </form>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="reveal bg-white rounded-xl p-6 border border-cream-300/50 flex items-start gap-4">
+                        <div class="w-12 h-12 bg-gold-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <iconify-icon icon="lucide:map-pin" class="text-gold-400 text-xl"></iconify-icon>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-navy-500 mb-1">Our Office</h4>
+                            <p class="text-navy-300 text-sm leading-relaxed">5 Church Street, Longford,<br>Co. Longford, Ireland, N39 V8X7</p>
+                        </div>
+                    </div>
+
+                    <div class="reveal reveal-delay-1 bg-white rounded-xl p-6 border border-cream-300/50 flex items-start gap-4">
+                        <div class="w-12 h-12 bg-gold-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <iconify-icon icon="lucide:phone" class="text-gold-400 text-xl"></iconify-icon>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-navy-500 mb-1">Phone</h4>
+                            <a href="tel:+353433346312" class="text-navy-300 text-sm hover:text-gold-400 transition-colors">+353 43 334 6312</a>
+                        </div>
+                    </div>
+
+                    <div class="reveal reveal-delay-2 bg-white rounded-xl p-6 border border-cream-300/50 flex items-start gap-4">
+                        <div class="w-12 h-12 bg-gold-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <iconify-icon icon="lucide:clock" class="text-gold-400 text-xl"></iconify-icon>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-navy-500 mb-1">Office Hours</h4>
+                            <p class="text-navy-300 text-sm">Monday – Friday<br>9:30 AM – 5:30 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="reveal reveal-delay-3 rounded-xl overflow-hidden border border-cream-300/50 shadow-md">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2345.6!2d-7.7936!3d53.7276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485da1e3c5c5c5c5%3A0x0!2s5+Church+St%2C+Longford!5e0!3m2!1sen!2sie!4v1"
+                            width="100%"
+                            height="250"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="E. C. Gearty & Company location on Google Maps">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-500 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded bg-gold-400 flex items-center justify-center">
+                            <iconify-icon icon="lucide:scale" class="text-navy-800 text-xl"></iconify-icon>
+                        </div>
+                        <div>
+                            <span class="font-display font-bold text-white text-lg block">E. C. Gearty</span>
+                            <span class="text-white/40 text-xs tracking-widest uppercase">& Company Solicitors</span>
+                        </div>
+                    </div>
+                    <p class="text-white/50 text-sm leading-relaxed max-w-sm mb-6">Trusted legal advice in Longford for over 35 years. Serving individuals, families, businesses, and public bodies with expertise and integrity.</p>
+                    <div class="flex items-center gap-4">
+                        <a href="tel:+353433346312" class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center text-white/50 hover:bg-gold-400 hover:text-navy-800 transition-all">
+                            <iconify-icon icon="lucide:phone" class="text-lg"></iconify-icon>
+                        </a>
+                        <a href="#contact" class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center text-white/50 hover:bg-gold-400 hover:text-navy-800 transition-all">
+                            <iconify-icon icon="lucide:mail" class="text-lg"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-white/50 text-sm hover:text-gold-400 transition-colors">About Us</a></li>
+                        <li><a href="#services" class="text-white/50 text-sm hover:text-gold-400 transition-colors">Our Services</a></li>
+                        <li><a href="#team" class="text-white/50 text-sm hover:text-gold-400 transition-colors">Our Team</a></li>
+                        <li><a href="#faq" class="text-white/50 text-sm hover:text-gold-400 transition-colors">FAQ</a></li>
+                        <li><a href="#contact" class="text-white/50 text-sm hover:text-gold-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-semibold text-white mb-4">Practice Areas</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-white/50 text-sm hover:text-gold-400 transition-colors">Conveyancing</a></li>
+                        <li><a href="#services" class="text-white/50 text-sm hover:text-gold-400 transition-colors">Wills & Probate</a></li>
+                        <li><a href="#services" class="text-white/50 text-sm hover:text-gold-400 transition-colors">Family Law</a></li>
+                        <li><a href="#services" class="text-white/50 text-sm hover:text-gold-400 transition-colors">Litigation</a></li>
+                        <li><a href="#services" class="text-white/50 text-sm hover:text-gold-400 transition-colors">Criminal Law</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p class="text-white/30 text-xs">© 2024 E. C. Gearty & Company Solicitors. All rights reserved.</p>
+                    <div class="flex items-center gap-6">
+                        <a href="#" class="text-white/30 text-xs hover:text-white/50 transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-white/30 text-xs hover:text-white/50 transition-colors">Cookie Policy</a>
+                        <a href="#" class="text-white/30 text-xs hover:text-white/50 transition-colors">Terms of Use</a>
+                    </div>
+                </div>
+                <p class="text-white/20 text-[10px] text-center mt-4">Regulated by the Law Society of Ireland</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GDPR Cookie Banner -->
+    <div id="cookieBanner" class="cookie-banner fixed bottom-0 left-0 right-0 z-[70] bg-navy-500 border-t border-white/10 p-6">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-white/60 text-sm">
+                <iconify-icon icon="lucide:cookie" class="text-gold-400 mr-1"></iconify-icon>
+                We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.
+                <a href="#" class="text-gold-400 underline hover:text-gold-300 ml-1">Learn more</a>
+            </p>
+            <div class="flex items-center gap-3 flex-shrink-0">
+                <button onclick="acceptCookies()" class="btn-primary text-navy-900 text-sm font-semibold px-6 py-2 rounded-md">Accept All</button>
+                <button onclick="acceptCookies()" class="text-white/50 text-sm font-medium px-4 py-2 border border-white/20 rounded-md hover:border-white/40 transition-colors">Reject</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast fixed bottom-24 right-6 z-[80] bg-navy-500 text-white p-4 rounded-xl shadow-2xl flex items-center gap-3 max-w-sm">
+        <div class="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <iconify-icon icon="lucide:check-circle" class="text-green-400 text-xl"></iconify-icon>
+        </div>
+        <div>
+            <div class="font-semibold text-sm">Message Sent!</div>
+            <div class="text-white/60 text-xs">We'll be in touch within 24 hours.</div>
+        </div>
+    </div>
+
+    <!-- Floating Call Button (Mobile) -->
+    <a href="tel:+353433346312" class="fixed bottom-6 left-6 z-50 lg:hidden w-14 h-14 bg-gold-400 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all active:scale-95" aria-label="Call us">
+        <iconify-icon icon="lucide:phone" class="text-navy-800 text-xl"></iconify-icon>
+    </a>
+
+    <script>
+        // Navigation Scroll Effect
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+
+            if (currentScroll > 80) {
+                navbar.classList.add('bg-white/95', 'backdrop-blur-lg', 'shadow-md');
+                navbar.classList.remove('bg-transparent');
+                navbar.querySelectorAll('.nav-link').forEach(l => l.classList.add('text-navy-500', 'hover:text-gold-400'));
+                navbar.querySelectorAll('.nav-link').forEach(l => l.classList.remove('text-white'));
+                navbar.querySelector('a span.font-display').classList.add('text-navy-500');
+                navbar.querySelector('a span.font-display').classList.remove('text-white');
+                navbar.querySelector('a .text-xs').classList.add('text-navy-300');
+                navbar.querySelector('a .text-xs').classList.remove('text-white/50');
+                document.getElementById('mobileToggle').querySelector('iconify-icon').classList.add('text-navy-500');
+                document.getElementById('mobileToggle').querySelector('iconify-icon').classList.remove('text-white');
+            } else {
+                navbar.classList.remove('bg-white/95', 'backdrop-blur-lg', 'shadow-md');
+                navbar.classList.add('bg-transparent');
+                navbar.querySelectorAll('.nav-link').forEach(l => l.classList.remove('text-navy-500', 'hover:text-gold-400'));
+                navbar.querySelectorAll('.nav-link').forEach(l => l.classList.add('text-white'));
+                navbar.querySelector('a span.font-display').classList.remove('text-navy-500');
+                navbar.querySelector('a span.font-display').classList.add('text-white');
+                navbar.querySelector('a .text-xs').classList.remove('text-navy-300');
+                navbar.querySelector('a .text-xs').classList.add('text-white/50');
+                document.getElementById('mobileToggle').querySelector('iconify-icon').classList.remove('text-navy-500');
+                document.getElementById('mobileToggle').querySelector('iconify-icon').classList.add('text-white');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        window.dispatchEvent(new Event('scroll'));
+
+        // Mobile Menu
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileClose = document.getElementById('mobileClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Scroll Reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Service Card Toggle
+        function toggleServiceDetail(card) {
+            const detail = card.querySelector('.service-detail');
+            const chevron = card.querySelector('.service-chevron');
+            if (detail.classList.contains('hidden')) {
+                document.querySelectorAll('.service-detail').forEach(d => d.classList.add('hidden'));
+                document.querySelectorAll('.service-chevron').forEach(c => c.style.transform = '');
+                detail.classList.remove('hidden');
+                chevron.style.transform = 'rotate(180deg)';
+            } else {
+                detail.classList.add('hidden');
+                chevron.style.transform = '';
+            }
+        }
+
+        // FAQ Toggle
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const chevron = button.querySelector('.faq-chevron');
+            const isOpen = answer.classList.contains('open');
+            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+            document.querySelectorAll('.faq-chevron').forEach(c => c.classList.remove('rotated'));
+            if (!isOpen) {
+                answer.classList.add('open');
+                chevron.classList.add('rotated');
+            }
+        }
+
+        // Contact Form
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const form = e.target;
+            const fields = form.querySelectorAll('[required]');
+            let valid = true;
+            fields.forEach(field => {
+                const errorMsg = field.parentElement.querySelector('.error-msg') || field.closest('label')?.parentElement?.querySelector('.error-msg');
+                if (!field.value.trim() || (field.type === 'email' && !field.value.includes('@')) || (field.type === 'checkbox' && !field.checked)) {
+                    valid = false;
+                    field.classList.add('border-red-400');
+                    if (errorMsg) errorMsg.classList.remove('hidden');
+                } else {
+                    field.classList.remove('border-red-400');
+                    if (errorMsg) errorMsg.classList.add('hidden');
+                }
+            });
+            if (valid) {
+                form.reset();
+                showToast();
+            }
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 4000);
+        }
+
+        // Cookie Banner
+        window.addEventListener('load', () => {
+            if (!localStorage.getItem('cookiesAccepted')) {
+                setTimeout(() => {
+                    document.getElementById('cookieBanner').classList.add('show');
+                }, 1500);
+            }
+        });
+
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookieBanner').classList.remove('show');
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Form field reset styling on input
+        document.querySelectorAll('#contactForm input, #contactForm textarea, #contactForm select').forEach(field => {
+            field.addEventListener('input', () => {
+                field.classList.remove('border-red-400');
+                const errorMsg = field.parentElement.querySelector('.error-msg') || field.closest('label')?.parentElement?.querySelector('.error-msg');
+                if (errorMsg) errorMsg.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
